@@ -1,4 +1,4 @@
-(ns core
+(ns cljtree
   (:require [clojure.tools.cli :as cli]
             [cljtree.core :refer [->Options tree]]))
 
@@ -11,7 +11,13 @@
   (let [{:keys [options arguments summary errors]} (cli/parse-opts args options)]
     (cond
       errors (println errors)
-      (:help options) (println summary)
+      (:help options) (do (println "'tree' powered by Clojure")
+                          (println "")
+                          (println "USAGE")
+                          (println "  cljtree [dirname] : Show children of dirname. default dirname is pwd.")
+                          (println "")
+                          (println "OPTIONS")
+                          (println summary))
       :else (let [root (if (empty? arguments) "." (first arguments))]
               (println root)
               (tree root "" (->Options (or (:limit options) 10)
