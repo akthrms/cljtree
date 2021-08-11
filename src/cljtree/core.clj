@@ -21,7 +21,7 @@
 
 (defn tree
   [root prefix {:keys [max-depth directories-only? all-files?] :as options}]
-  (when (or (nil? max-depth) (> max-depth 0))
+  (when (> max-depth 0)
     (let [files (list-files root directories-only?)
           last-file (last files)]
       (doseq [file files
