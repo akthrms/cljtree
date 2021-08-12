@@ -1,7 +1,9 @@
 # cljtree
 
+`tree` powered by Clojure
+
 ```sh
-$ clj -m cljtree
+$ clj -m core
 .
 ├── README.md
 ├── cljtree.iml
