@@ -2,7 +2,7 @@
 
 `tree` powered by Clojure
 
-```sh
+```
 $ clj -m core
 .
 ├── README.md
